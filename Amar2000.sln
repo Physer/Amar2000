@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eFocus.Amar2000.API", "src\eFocus.Amar2000.API\eFocus.Amar2000.API.csproj", "{5ADB1B99-97B5-423D-8E90-24FBFB6D7910}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eFocus.Amar2000.Infrastructure", "src\eFocus.Amar2000.Infrastructure\eFocus.Amar2000.Infrastructure.csproj", "{82083B9E-4811-4672-8AA3-79A808C01384}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eFocus.Amar2000.Datasources.Netatmo", "src\eFocus.Amar2000.Datasources.Netatmo\eFocus.Amar2000.Datasources.Netatmo.csproj", "{81ED3EDB-D135-4B0F-B664-AE0F60FA54AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Datasources", "Datasources", "{18CB6ED0-67E2-4280-AFB4-165E5C0BB946}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eFocus.Amar2000.Persistance.Elastic", "src\eFocus.Amar2000.Persistance.Elastic\eFocus.Amar2000.Persistance.Elastic.csproj", "{1DC4AB3E-8B8C-4FB2-BF3A-E0474DD77BA8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Persistance", "Persistance", "{E5A4DF39-DD73-4A83-9628-446282260ADD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eFocus.Amar2000.Core", "src\eFocus.Amar2000.Core\eFocus.Amar2000.Core.csproj", "{273DC375-EE94-48F3-B98A-0CA348D97847}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5ADB1B99-97B5-423D-8E90-24FBFB6D7910}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5ADB1B99-97B5-423D-8E90-24FBFB6D7910}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5ADB1B99-97B5-423D-8E90-24FBFB6D7910}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5ADB1B99-97B5-423D-8E90-24FBFB6D7910}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82083B9E-4811-4672-8AA3-79A808C01384}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82083B9E-4811-4672-8AA3-79A808C01384}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82083B9E-4811-4672-8AA3-79A808C01384}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82083B9E-4811-4672-8AA3-79A808C01384}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81ED3EDB-D135-4B0F-B664-AE0F60FA54AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81ED3EDB-D135-4B0F-B664-AE0F60FA54AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81ED3EDB-D135-4B0F-B664-AE0F60FA54AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81ED3EDB-D135-4B0F-B664-AE0F60FA54AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DC4AB3E-8B8C-4FB2-BF3A-E0474DD77BA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DC4AB3E-8B8C-4FB2-BF3A-E0474DD77BA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DC4AB3E-8B8C-4FB2-BF3A-E0474DD77BA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DC4AB3E-8B8C-4FB2-BF3A-E0474DD77BA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{273DC375-EE94-48F3-B98A-0CA348D97847}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{273DC375-EE94-48F3-B98A-0CA348D97847}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{273DC375-EE94-48F3-B98A-0CA348D97847}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{273DC375-EE94-48F3-B98A-0CA348D97847}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{81ED3EDB-D135-4B0F-B664-AE0F60FA54AC} = {18CB6ED0-67E2-4280-AFB4-165E5C0BB946}
+		{1DC4AB3E-8B8C-4FB2-BF3A-E0474DD77BA8} = {E5A4DF39-DD73-4A83-9628-446282260ADD}
+	EndGlobalSection
+EndGlobal
