@@ -36,6 +36,7 @@ namespace eFocus.Amar2000.API
         private static void RegisterModules(ContainerBuilder builder)
         {
             builder.RegisterModule<InfrastructureModule>();
+            builder.RegisterModule<Amar2000ApiModule>();
         }
     }
 }

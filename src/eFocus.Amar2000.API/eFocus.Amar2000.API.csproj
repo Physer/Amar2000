@@ -226,12 +226,17 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Amar2000ApiModule.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\ContainerConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Configuration\BaseConfigurationElementCollection.cs" />
+    <Compile Include="Configuration\IConfigurationRepository.cs" />
+    <Compile Include="Configuration\ConfigSectionConfigurationRepository.cs" />
+    <Compile Include="Configuration\ZoneSensorMappingSection\ZoneSensorMappingSection.cs" />
     <Compile Include="ContractResolvers\SignalRContractResolver.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ClimateController.cs" />
@@ -264,7 +269,10 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="AppSettings.secret.config">
+    <Content Include="App_Config\AppSettings.secret.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Config\ZoneSensorMapping.secret.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Properties\PublishProfiles\amar2000 - Web Deploy.pubxml" />

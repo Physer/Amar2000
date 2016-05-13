@@ -104,6 +104,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InfrastructureModule.cs" />
+    <Compile Include="Configuration\ZoneSensorMapping\ISensorMap.cs" />
+    <Compile Include="Configuration\ZoneSensorMapping\IZoneMap.cs" />
+    <Compile Include="Configuration\ZoneSensorMapping\IZoneSensorMapping.cs" />
     <Compile Include="Persistance\DefaultPeristanceRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ClimateService.cs" />
