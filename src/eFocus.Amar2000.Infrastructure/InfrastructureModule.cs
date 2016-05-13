@@ -1,7 +1,8 @@
 ﻿using Autofac;
+using eFocus.Amar2000.Core;
 using eFocus.Amar2000.Datasources.Netatmo;
+using eFocus.Amar2000.Infrastructure.Persistance;
 using eFocus.Amar2000.Infrastructure.Services;
-using eFocus.Amar2000.Persistance.Elastic;
 
 namespace eFocus.Amar2000.Infrastructure
 {
@@ -11,9 +12,9 @@ namespace eFocus.Amar2000.Infrastructure
         {
             // Modules
             builder.RegisterModule<NetatmoModule>();
-            builder.RegisterModule<ElasticModule>();
 
             builder.RegisterType<ClimateService>();
+            builder.RegisterType<DefaultPeristanceRepository>().As<IPersistanceRepository>();
         }
     }
 }

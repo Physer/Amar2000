@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InfrastructureModule.cs" />
+    <Compile Include="Persistance\DefaultPeristanceRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ClimateService.cs" />
   </ItemGroup>
@@ -115,10 +116,6 @@
     <ProjectReference Include="..\eFocus.Amar2000.Datasources.Netatmo\eFocus.Amar2000.Datasources.Netatmo.csproj">
       <Project>{81ed3edb-d135-4b0f-b664-ae0f60fa54ac}</Project>
       <Name>eFocus.Amar2000.Datasources.Netatmo</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\eFocus.Amar2000.Persistance.Elastic\eFocus.Amar2000.Persistance.Elastic.csproj">
-      <Project>{1dc4ab3e-8b8c-4fb2-bf3a-e0474dd77ba8}</Project>
-      <Name>eFocus.Amar2000.Persistance.Elastic</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
