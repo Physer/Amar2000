@@ -12,11 +12,7 @@ namespace eFocus.Amar2000.Datasources.Netatmo.Models
         [JsonProperty("co2_calibrating")]
         public bool CO2Calibrating { get; set; }
 
-        [JsonProperty("module_name")]
-        public string Name { get; set; }
-
         [JsonProperty("dashboard_data")]
         public NetatmoDashoardData DashboardData { get; set; }
-
     }
 }

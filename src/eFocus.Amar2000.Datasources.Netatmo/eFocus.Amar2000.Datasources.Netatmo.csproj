@@ -114,9 +114,11 @@
   <ItemGroup>
     <Compile Include="Models\NetatmoBody.cs" />
     <Compile Include="Models\NetatmoDashoardData.cs" />
+    <Compile Include="Models\NetatmoModule.cs" />
     <Compile Include="Models\NetatmoResponse.cs" />
     <Compile Include="Models\NetatmoDevice.cs" />
     <Compile Include="Models\NetatmoSession.cs" />
+    <Compile Include="Models\NetatmoStation.cs" />
     <Compile Include="NetatmoModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\NetatmoClimateRepository.cs" />

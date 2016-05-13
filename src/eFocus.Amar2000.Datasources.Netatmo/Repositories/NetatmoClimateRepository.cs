@@ -43,7 +43,15 @@ namespace eFocus.Amar2000.Datasources.Netatmo.Repositories
 
         protected virtual IEnumerable<Sensor> MapResponse(NetatmoResponse response)
         {
-            foreach (var device in response.Body.Devices)
+            var devices = new List<NetatmoDevice>();
+
+            foreach (var station in response.Body.Stations)
+            {
+                devices.Add(station);
+                devices.AddRange(station.Modules);
+            }
+
+            foreach (var device in devices)
             {
                 yield return new Sensor
                 {

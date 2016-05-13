@@ -6,6 +6,6 @@ namespace eFocus.Amar2000.Datasources.Netatmo.Models
     public class NetatmoBody
     {
         [JsonProperty("devices")]
-        public IEnumerable<NetatmoDevice> Devices { get; set; }
+        public IEnumerable<NetatmoStation> Stations { get; set; }
     }
 }
