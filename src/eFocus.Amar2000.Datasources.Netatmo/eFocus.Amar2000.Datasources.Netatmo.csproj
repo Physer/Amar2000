@@ -112,6 +112,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\INetatmoBatteryPoweredModule.cs" />
     <Compile Include="Models\NetatmoBody.cs" />
     <Compile Include="Models\NetatmoDashoardData.cs" />
     <Compile Include="Models\NetatmoModule.cs" />

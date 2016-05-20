@@ -53,6 +53,8 @@ namespace eFocus.Amar2000.Datasources.Netatmo.Repositories
 
             foreach (var device in devices)
             {
+                var batteryPoweredDevice = device as INetatmoBatteryPoweredModule;
+
                 yield return new Sensor
                 {
                     SensorId = device.Id,
@@ -64,7 +66,8 @@ namespace eFocus.Amar2000.Datasources.Netatmo.Repositories
                     MaximumTemperature = device.DashboardData.MaximumTemperature,
                     MaximumTemperatureDate = device.DashboardData.MaximumTemperatureDate,
                     MinimumTemperature = device.DashboardData.MinimumTemperature,
-                    MinimumTemperatureDate = device.DashboardData.MinimumTemperatureDate
+                    MinimumTemperatureDate = device.DashboardData.MinimumTemperatureDate,
+                    BatteryLow = batteryPoweredDevice?.BatteryPercentage == null ? (bool?) null : batteryPoweredDevice.BatteryPercentage.Value < 10M
                 };
             }
         }

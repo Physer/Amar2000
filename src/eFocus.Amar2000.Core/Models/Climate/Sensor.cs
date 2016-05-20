@@ -18,5 +18,6 @@ namespace eFocus.Amar2000.Core.Models.Climate
         public decimal? MaximumTemperature { get; set; }
         public DateTime? MinimumTemperatureDate { get; set; }
         public decimal? MinimumTemperature { get; set; }
+        public bool? BatteryLow { get; set; }
     }
 }
