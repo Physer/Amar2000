@@ -9,7 +9,7 @@ namespace eFocus.Amar2000.API.Filters
 {
     public class IdentityBasicAuthenticationAttribute : BasicAuthenticationAttribute
     {
-        protected override async Task<IPrincipal> AuthenticateAsync(string userName, string password, CancellationToken cancellationToken)
+        protected override Task<IPrincipal> AuthenticateAsync(string userName, string password, CancellationToken cancellationToken)
         {
             cancellationToken.ThrowIfCancellationRequested();
 
@@ -18,15 +18,15 @@ namespace eFocus.Amar2000.API.Filters
                 return null;
             }
 
-            Claim nameClaim = new Claim(ClaimTypes.Name, userName);
-            List<Claim> claims = new List<Claim> { nameClaim };
+            var nameClaim = new Claim(ClaimTypes.Name, userName);
+            var claims = new List<Claim> { nameClaim };
 
             // important to set the identity this way, otherwise IsAuthenticated will be false
             // see: http://leastprivilege.com/2012/09/24/claimsidentity-isauthenticated-and-authenticationtype-in-net-4-5/
-            ClaimsIdentity identity = new ClaimsIdentity(claims, "Basic");
+            var identity = new ClaimsIdentity(claims, "Basic");
 
             var principal = new ClaimsPrincipal(identity);
-            return principal;
+            return Task.Factory.StartNew(() => (IPrincipal)principal, cancellationToken);
         }
     }
 }

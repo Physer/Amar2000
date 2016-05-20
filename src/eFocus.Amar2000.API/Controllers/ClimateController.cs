@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Http;
+using eFocus.Amar2000.API.Filters;
 using eFocus.Amar2000.Core.Models.Climate;
 using eFocus.Amar2000.Infrastructure.Services;
 
@@ -16,6 +17,10 @@ namespace eFocus.Amar2000.API.Controllers
         }
 
         // GET api/climate
+
+        #if !DEBUG
+        [TokenAuthorization]
+        #endif
         public async Task<IEnumerable<Zone>> Get()
         {
             return await _climateService.GetClimateData();

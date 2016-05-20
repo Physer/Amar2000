@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Security.Principal;
 using System.Text;
 using System.Threading;
@@ -16,26 +14,20 @@ namespace eFocus.Amar2000.API.Filters
 
         public async Task AuthenticateAsync(HttpAuthenticationContext context, CancellationToken cancellationToken)
         {
-            HttpRequestMessage request = context.Request;
-            AuthenticationHeaderValue authorization = request.Headers.Authorization;
+            var request = context.Request;
+            var authorization = request.Headers.Authorization;
 
-            if (authorization == null)
-            {
-                return;
-            }
+            if (authorization == null) return;
 
-            if (authorization.Scheme != "Basic")
-            {
-                return;
-            }
+            if (authorization.Scheme != "Basic") return;
 
-            if (String.IsNullOrEmpty(authorization.Parameter))
+            if (string.IsNullOrEmpty(authorization.Parameter))
             {
                 context.ErrorResult = new AuthenticationFailureResult("Missing credentials", request);
                 return;
             }
 
-            Tuple<string, string> userNameAndPasword = ExtractUserNameAndPassword(authorization.Parameter);
+            var userNameAndPasword = ExtractUserNameAndPassword(authorization.Parameter);
 
             if (userNameAndPasword == null)
             {
@@ -43,10 +35,10 @@ namespace eFocus.Amar2000.API.Filters
                 return;
             }
 
-            string userName = userNameAndPasword.Item1;
-            string password = userNameAndPasword.Item2;
+            var userName = userNameAndPasword.Item1;
+            var password = userNameAndPasword.Item2;
 
-            IPrincipal principal = await AuthenticateAsync(userName, password, cancellationToken);
+            var principal = await AuthenticateAsync(userName, password, cancellationToken);
 
             if (principal == null)
             {
@@ -98,15 +90,15 @@ namespace eFocus.Amar2000.API.Filters
                 return null;
             }
 
-            int colonIndex = decodedCredentials.IndexOf(':');
+            var colonIndex = decodedCredentials.IndexOf(':');
 
             if (colonIndex == -1)
             {
                 return null;
             }
 
-            string userName = decodedCredentials.Substring(0, colonIndex);
-            string password = decodedCredentials.Substring(colonIndex + 1);
+            var userName = decodedCredentials.Substring(0, colonIndex);
+            var password = decodedCredentials.Substring(colonIndex + 1);
             return new Tuple<string, string>(userName, password);
         }
 
@@ -120,7 +112,7 @@ namespace eFocus.Amar2000.API.Filters
         {
             string parameter;
 
-            if (String.IsNullOrEmpty(Realm))
+            if (string.IsNullOrEmpty(Realm))
             {
                 parameter = null;
             }
@@ -134,9 +126,6 @@ namespace eFocus.Amar2000.API.Filters
             context.ChallengeWith("Basic", parameter);
         }
 
-        public virtual bool AllowMultiple
-        {
-            get { return false; }
-        }
+        public virtual bool AllowMultiple => false;
     }
 }
