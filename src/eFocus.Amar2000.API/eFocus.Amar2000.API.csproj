@@ -242,17 +242,12 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ClimateController.cs" />
     <Compile Include="Controllers\UpdateController.cs" />
-    <Compile Include="Filters\BasicAuthenticationAttribute.cs" />
-    <Compile Include="Filters\HttpAuthenticationChallengeContextExtensions.cs" />
-    <Compile Include="Filters\IdentityBasicAuthenticationAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Hubs\ClimateHub.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
-    <Compile Include="Results\AddChallengeOnUnauthorizedResult.cs" />
-    <Compile Include="Results\AuthenticationFailureResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
