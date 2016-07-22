@@ -16,7 +16,6 @@ namespace eFocus.Amar2000.API.Controllers
         }
 
         [HttpPost]
-        [TokenAuthorization]
         public async Task<IHttpActionResult> Post()
         {
             var zones = await _climateService.GetClimateData();
@@ -28,7 +27,6 @@ namespace eFocus.Amar2000.API.Controllers
         }
 
         [HttpPut]
-        [TokenAuthorization]
         public IHttpActionResult Put()
         {
             var climateHubContext = GlobalHost.ConnectionManager.GetHubContext<ClimateHub>();

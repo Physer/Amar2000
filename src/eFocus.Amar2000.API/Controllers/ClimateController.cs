@@ -18,9 +18,6 @@ namespace eFocus.Amar2000.API.Controllers
 
         // GET api/climate
 
-        #if !DEBUG
-        [TokenAuthorization]
-        #endif
         public async Task<IEnumerable<Zone>> Get()
         {
             return await _climateService.GetClimateData();
