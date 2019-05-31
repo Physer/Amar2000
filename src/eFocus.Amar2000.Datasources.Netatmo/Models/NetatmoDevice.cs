@@ -14,5 +14,9 @@ namespace eFocus.Amar2000.Datasources.Netatmo.Models
 
         [JsonProperty("dashboard_data")]
         public NetatmoDashoardData DashboardData { get; set; }
+
+        [JsonProperty("battery_vp")]
+
+        public int BatteryPercentage { get; set; }
     }
 }

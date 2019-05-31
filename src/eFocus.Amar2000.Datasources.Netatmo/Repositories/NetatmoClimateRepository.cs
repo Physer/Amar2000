@@ -53,21 +53,19 @@ namespace eFocus.Amar2000.Datasources.Netatmo.Repositories
 
             foreach (var device in devices)
             {
-                var batteryPoweredDevice = device as INetatmoBatteryPoweredModule;
-
                 yield return new Sensor
                 {
-                    SensorId = device.Id,
-                    Timestamp = device.DashboardData.TimeUtc,
-                    CO2 = device.DashboardData.CO2,
-                    Humidity = device.DashboardData.Humidity,
-                    Noise = device.DashboardData.Noise,
-                    Temperature = device.DashboardData.Temperature,
-                    MaximumTemperature = device.DashboardData.MaximumTemperature,
-                    MaximumTemperatureDate = device.DashboardData.MaximumTemperatureDate,
-                    MinimumTemperature = device.DashboardData.MinimumTemperature,
-                    MinimumTemperatureDate = device.DashboardData.MinimumTemperatureDate,
-                    BatteryLow = batteryPoweredDevice?.BatteryPercentage == null ? (bool?) null : batteryPoweredDevice.BatteryPercentage.Value < 10M
+                    SensorId = device?.Id,
+                    Timestamp = (device != null && device.DashboardData != null) ? device.DashboardData.TimeUtc : DateTime.MinValue,
+                    CO2 = device?.DashboardData?.CO2,
+                    Humidity = device?.DashboardData?.Humidity,
+                    Noise = device?.DashboardData?.Noise,
+                    Temperature = device?.DashboardData?.Temperature,
+                    MaximumTemperature = device?.DashboardData?.MaximumTemperature,
+                    MaximumTemperatureDate = device?.DashboardData?.MaximumTemperatureDate,
+                    MinimumTemperature = device?.DashboardData?.MinimumTemperature,
+                    MinimumTemperatureDate = device?.DashboardData?.MinimumTemperatureDate,
+                    BatteryLow = false
                 };
             }
         }
